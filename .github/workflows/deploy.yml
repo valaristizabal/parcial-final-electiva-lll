@@ -1,0 +1,44 @@
+name: Deploy Lambda Functions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Deploy SaludoSimple Lambda
+        run: |
+          # Comando para desplegar la Lambda "SaludoSimple"
+          aws lambda update-function-code --function-name SaludoSimple --zip-file fileb://lambda_functions/SaludoSimple/index.zip
+
+      - name: Deploy SaludoPersonalizado Lambda
+        run: |
+          # Comando para desplegar la Lambda "SaludoPersonalizado"
+          aws lambda update-function-code --function-name SaludoPersonalizado --zip-file fileb://lambda_functions/SaludoPersonalizado/index.zip
+
+      - name: Deploy Calculadora Lambda
+        run: |
+          # Comando para desplegar la Lambda "Calculadora"
+          aws lambda update-function-code --function-name Calculadora --zip-file fileb://lambda_functions/Calculadora/index.zip
+
+      - name: Deploy ProcesarTexto Lambda
+        run: |
+          # Comando para desplegar la Lambda "ProcesarTexto"
+          aws lambda update-function-code --function-name ProcesarTexto --zip-file fileb://lambda_functions/ProcesarTexto/index.zip
+
+      - name: Deploy Estudiantes Lambda
+        run: |
+          # Comando para desplegar la Lambda "Estudiantes"
+          aws lambda update-function-code --function-name Estudiantes --zip-file fileb://lambda_functions/Estudiantes/index.zip
