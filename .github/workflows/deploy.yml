@@ -28,6 +28,7 @@ jobs:
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set region us-east-1
 
+
       - name: Create zip package for SaludoSimple
         run: |
           zip -r lambda_functions/SaludoSimple/index.zip lambda_functions/SaludoSimple/
