@@ -19,7 +19,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: SaludoSimple
-          source: lambda_functions/SaludoSimple/lambda_function.py
+          source: lambda_functions/SaludoSimple/index.py
 
   deploy_saludo_personalizado:
     name: Deploy SaludoPersonalizado Lambda
@@ -34,7 +34,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: SaludoPersonalizado
-          source: lambda_functions/SaludoPersonalizado/lambda_function.py
+          source: lambda_functions/SaludoPersonalizado/index.py
 
   deploy_calculadora:
     name: Deploy Calculadora Lambda
@@ -49,7 +49,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: Calculadora
-          source: lambda_functions/Calculadora/lambda_function.py
+          source: lambda_functions/Calculadora/index.py
 
   deploy_procesar_texto:
     name: Deploy ProcesarTexto Lambda
@@ -64,7 +64,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: ProcesarTexto
-          source: lambda_functions/ProcesarTexto/lambda_function.py
+          source: lambda_functions/ProcesarTexto/index.py
 
   deploy_estudiantes:
     name: Deploy Estudiantes Lambda
@@ -79,4 +79,4 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: us-east-1
           function_name: Estudiantes
-          source: lambda_functions/Estudiantes/lambda_function.py
+          source: lambda_functions/Estudiantes/index.py
