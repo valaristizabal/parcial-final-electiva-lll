@@ -17,66 +17,66 @@ jobs:
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
+          aws_region:  ${{ secrets.AWS_REGION }}
           function_name: SaludoSimple
-          source: lambda_functions/SaludoSimple/index.py
-
-  deploy_saludo_personalizado:
-    name: Deploy SaludoPersonalizado Lambda
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Deploy SaludoPersonalizado Lambda
-        uses: appleboy/lambda-action@v0.2.0
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
-          function_name: SaludoPersonalizado
-          source: lambda_functions/SaludoPersonalizado/index.py
-
-  deploy_calculadora:
-    name: Deploy Calculadora Lambda
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Deploy Calculadora Lambda
-        uses: appleboy/lambda-action@v0.2.0
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
-          function_name: Calculadora
-          source: lambda_functions/Calculadora/index.py
-
-  deploy_procesar_texto:
-    name: Deploy ProcesarTexto Lambda
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Deploy ProcesarTexto Lambda
-        uses: appleboy/lambda-action@v0.2.0
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
-          function_name: ProcesarTexto
-          source: lambda_functions/ProcesarTexto/index.py
-
-  deploy_estudiantes:
-    name: Deploy Estudiantes Lambda
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Deploy Estudiantes Lambda
-        uses: appleboy/lambda-action@v0.2.0
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: us-east-1
-          function_name: Estudiantes
-          source: lambda_functions/Estudiantes/index.py
+          source: saludo_simple.py
+#
+#  deploy_saludo_personalizado:
+#    name: Deploy SaludoPersonalizado Lambda
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v3
+#      - name: Deploy SaludoPersonalizado Lambda
+#        uses: appleboy/lambda-action@v0.2.0
+#        with:
+#          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws_region: us-east-1
+#          function_name: SaludoPersonalizado
+#          source: lambda_functions/SaludoPersonalizado/saludo_simple.py
+#
+#  deploy_calculadora:
+#    name: Deploy Calculadora Lambda
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v3
+#      - name: Deploy Calculadora Lambda
+#        uses: appleboy/lambda-action@v0.2.0
+#        with:
+#          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws_region: us-east-1
+#          function_name: Calculadora
+#          source: lambda_functions/Calculadora/saludo_simple.py
+#
+#  deploy_procesar_texto:
+#    name: Deploy ProcesarTexto Lambda
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v3
+#      - name: Deploy ProcesarTexto Lambda
+#        uses: appleboy/lambda-action@v0.2.0
+#        with:
+#          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws_region: us-east-1
+#          function_name: ProcesarTexto
+#          source: lambda_functions/ProcesarTexto/saludo_simple.py
+#
+#  deploy_estudiantes:
+#    name: Deploy Estudiantes Lambda
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v3
+#      - name: Deploy Estudiantes Lambda
+#        uses: appleboy/lambda-action@v0.2.0
+#        with:
+#          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws_region: us-east-1
+#          function_name: Estudiantes
+#          source: lambda_functions/Estudiantes/saludo_simple.py
