@@ -15,10 +15,10 @@ jobs:
       - name: deploy miPrimeraLambdaGitHub
         uses: appleboy/lambda-action@v0.2.0
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_1 }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_1 }}
           aws_region: ${{ secrets.AWS_REGION }}
-          function_name: miPrimeraLambdaGitHub
+          function_name: SaludoSimple
           source: saludo_simple.py
 
   deploy_suma:
@@ -33,5 +33,5 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_REGION }}
-          function_name: suma
+          function_name: Calculadora
           source: calculadora.py
