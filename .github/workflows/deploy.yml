@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  deploy_miPrimeraLambdaGitHub:
-    name: deploy miPrimeraLambdaGitHub from source
+  deploy_saludo_simple:
+    name: deploy saludo_simple from source
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
@@ -21,8 +21,8 @@ jobs:
           function_name: SaludoSimple
           source: saludo_simple.py
 
-  deploy_suma:
-    name: deploy suma lambda from source
+  deploy_calculadora:
+    name: deploy calculadora from source
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
@@ -30,8 +30,8 @@ jobs:
       - name: deploy suma lambda
         uses: appleboy/lambda-action@v0.2.0
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_1 }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY_1 }}
           aws_region: ${{ secrets.AWS_REGION }}
           function_name: Calculadora
           source: calculadora.py
