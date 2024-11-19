@@ -1,82 +1,36 @@
-name: Deploy Lambda Functions
-
+name: deploy to lambda
 on:
   push:
     branches:
-      - main
+      - corte3
 
 jobs:
-  deploy_saludo_simple:
-    name: Deploy SaludoSimple Lambda
+  deploy_miPrimeraLambdaGitHub:
+    name: deploy miPrimeraLambdaGitHub from source
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: checkout source code
         uses: actions/checkout@v3
-      - name: Deploy SaludoSimple Lambda
+      - name: deploy miPrimeraLambdaGitHub
         uses: appleboy/lambda-action@v0.2.0
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region:  ${{ secrets.AWS_REGION }}
-          function_name: SaludoSimple
+          aws_region: ${{ secrets.AWS_REGION }}
+          function_name: miPrimeraLambdaGitHub
           source: saludo_simple.py
 
-  deploy_saludo_personalizado:
-      name: Deploy SaludoPersonalizado Lambda
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout source code
-          uses: actions/checkout@v3
-        - name: Deploy SaludoPersonalizado Lambda
-          uses: appleboy/lambda-action@v0.2.0
-          with:
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws_region: ${{ secrets.AWS_REGION }}
-            function_name: SaludoPersonalizado
-            source: saludo_personalizado.py
-
-  deploy_calculadora:
-      name: Deploy Calculadora Lambda
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout source code
-          uses: actions/checkout@v3
-        - name: Deploy Calculadora Lambda
-          uses: appleboy/lambda-action@v0.2.0
-          with:
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws_region: ${{ secrets.AWS_REGION }}
-            function_name: Calculadora
-            source: calculadora.py
-
-  deploy_procesar_texto:
-      name: Deploy ProcesarTexto Lambda
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout source code
-          uses: actions/checkout@v3
-        - name: Deploy ProcesarTexto Lambda
-          uses: appleboy/lambda-action@v0.2.0
-          with:
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws_region: ${{ secrets.AWS_REGION }}
-            function_name: ProcesarTexto
-            source: procesar_texto.py
-
-  deploy_estudiantes:
-      name: Deploy Estudiantes Lambda
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout source code
-          uses: actions/checkout@v3
-        - name: Deploy Estudiantes Lambda
-          uses: appleboy/lambda-action@v0.2.0
-          with:
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws_region: ${{ secrets.AWS_REGION }}
-            function_name: Estudiantes
-            source: estudiantes.py
+  deploy_suma:
+    name: deploy suma lambda from source
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v3
+      - name: deploy suma lambda
+        uses: appleboy/lambda-action@v0.2.0
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ secrets.AWS_REGION }}
+          function_name: suma
+          source: calculadora.py
